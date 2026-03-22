@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+ surgul:
+ build: .
+ image: surgul:latest
+ container_name: surgul-research
+ ports:
+ - "8888:8888"
+ volumes:
+ - ./data:/app/data
+ - ./results:/app/results
+ - ./figures:/app/figures
+ - ./notebooks:/app/notebooks
+ environment:
+ - JUPYTER_ENABLE_LAB=yes
+ stdin_open: true
+ tty: true

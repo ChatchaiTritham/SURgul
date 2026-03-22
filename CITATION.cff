@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "[Your Last Name]"
+    given-names: "[Your First Name]"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "[Your University]"
+title: "SURgul: Screening-First Risk Governance Logic for Clinical Triage AI"
+version: 1.0.0-research
+doi: 10.5281/zenodo.XXXXXXX
+date-released: 2024-01-09
+url: "https://github.com/YourUsername/SURgul"
+repository-code: "https://github.com/YourUsername/SURgul"
+keywords:
+  - AI safety
+  - clinical decision support
+  - medical AI
+  - uncertainty quantification
+  - formal verification
+  - triage systems
+  - emergency medicine
+license: MIT
+type: software
