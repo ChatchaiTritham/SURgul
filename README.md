@@ -45,6 +45,8 @@ print(recommendation.care_pathway.value)
   - `examples/example_phase5_validators.py`: validator examples
   - `examples/example_phase5_exporters.py`: exporter examples
   - `examples/example_phase5_tutorial_walkthrough.py`: guided phase-5 workflow
+  - `scripts/generate_figures.py`: SRGL architecture and conservative-merging figure generation
+  - `scripts/generate_manuscript_manifest.py`: curated figure manifest and visual QA sheet
 - Notebooks:
   - `notebooks/01_data_generation.ipynb`
   - `notebooks/01_statistical_analysis.ipynb`
@@ -52,6 +54,31 @@ print(recommendation.care_pathway.value)
   - `notebooks/02_visualization.ipynb`
   - `notebooks/03_visualization.ipynb`
   - `notebooks/04_ablation_study.ipynb`
+
+## Curated Figure Status
+
+SURgul figures are currently maintained as reproducibility figures. Do not claim
+a standalone SURgul article figure set until a manuscript is actively revived,
+recompiled, and reverified.
+
+Regenerate figure exports:
+
+```bash
+python scripts/generate_figures.py
+```
+
+Regenerate the manifest and visual QA sheet:
+
+```bash
+python scripts/generate_manuscript_manifest.py
+```
+
+Outputs:
+
+- `figures/`: PDF and PNG figure exports
+- `FIGURE_MANIFEST.csv`: figure role, source script, source artifact, caption,
+  and conditional article section
+- `figures/visual_qa_contact_sheet.png`: visual QA sheet
 
 ## Cross-Repository Tutorial Charts
 
@@ -80,9 +107,34 @@ stable package path is `src/surgul/`.
 pytest tests -v
 ```
 
+## Manuscript Alignment
+
+SURgul is currently a reproducibility/component repository. It supports the
+SRGL governance contribution but should not be claimed as a standalone article
+package until a manuscript is revived, recompiled, and reverified.
+
+Repository artifacts currently support:
+
+- SRGL safety-governance logic
+- six-gate screening structure
+- conservative merging behavior
+- reproducibility figures listed in `FIGURE_MANIFEST.csv`
+
+Use SURgul as governance evidence for the broader TRI-X portfolio, not as an
+eighth standalone article claim.
+
+## Methodological References
+
+SURgul should be referenced as:
+
+- SRGL/governance component evidence
+- safety-first screening and conservative merge logic
+- reusable governance support for TRI-X-style clinical decision support
+
 ## Citation
 
-- cite the associated thesis/manuscript sections covering SURgul and SRGL
+- cite this software repository as reproducibility/component evidence while any
+  associated manuscript remains inactive or in preparation
 
 ## License
 
