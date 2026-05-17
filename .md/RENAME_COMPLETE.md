@@ -106,7 +106,7 @@ docker run -it -p 8888:8888 surgul:latest
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/YourUsername/SURgul.git
+git clone https://github.com/ChatchaiTritham/SURgul.git
 cd SURgul
 
 # Install
@@ -127,10 +127,10 @@ pip install -e .
 ```bibtex
 @article{surgul2024,
  title={{SURgul}: Safety-first Universal Risk Governance Logic for Clinical Triage AI},
- author={[Your Name] and [Co-authors]},
+ author={Chatchai Tritham and [Co-authors]},
  journal={Under Review},
  year={2024},
- note={Code available at: https://github.com/YourUsername/SURgul}
+ note={Code available at: https://github.com/ChatchaiTritham/SURgul}
 }
 ```
 
@@ -217,9 +217,9 @@ Replace all instances of "SRGL" with "SURgul" in:
 
 ## ðŸ“ž Questions?
 
-**Rebranding Lead:** [Your Name]
-**Email:** [your.email@university.edu]
-**GitHub:** https://github.com/YourUsername/SURgul
+**Rebranding Lead:** Chatchai Tritham
+**Email:** chatchait66@nu.ac.th
+**GitHub:** https://github.com/ChatchaiTritham/SURgul
 
 ### Documentation
 - **Brand Guidelines:** BRANDING.md

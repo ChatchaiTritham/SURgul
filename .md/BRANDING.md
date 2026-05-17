@@ -141,7 +141,7 @@ The name emphasizes:
 
 ### Copyright Notice
 ```
-Copyright © 2024 [Your Institution]
+Copyright © 2024 Naresuan University
 SURgul™ and all associated marks are trademarks.
 ```
 
@@ -167,8 +167,8 @@ SURgul™ and all associated marks are trademarks.
 
 ## Contact for Branding Questions
 
-**Brand Manager:** [Your Name]
-**Email:** [your.email@university.edu]
+**Brand Manager:** Chatchai Tritham
+**Email:** chatchait66@nu.ac.th
 **Guidelines Version:** 1.0.0
 **Last Updated:** 2024-01-09
 

@@ -6,7 +6,7 @@ Get up and running with SURgul in 5 minutes!
 
 ```bash
 # Clone and setup
-git clone https://github.com/YourUsername/SURgul.git && cd SURgul
+git clone https://github.com/ChatchaiTritham/SURgul.git && cd SURgul
 python -m venv venv && source venv/bin/activate # Windows: venv\Scripts\activate
 pip install -r requirements.txt && pip install -e .
 
@@ -31,7 +31,7 @@ jupyter lab notebooks/04_ablation_study.ipynb # Ablation (7 min)
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/YourUsername/SURgul.git
+git clone https://github.com/ChatchaiTritham/SURgul.git
 cd SURgul
 
 # 2. Create virtual environment
@@ -267,9 +267,9 @@ n_cases = 100 # Instead of 600
 
 ## ðŸ†˜ Getting Help
 
-- ðŸ“§ Email: [your.email@university.edu]
-- ðŸ› Issues: https://github.com/YourUsername/SURgul/issues
-- ðŸ’¬ Discussions: https://github.com/YourUsername/SURgul/discussions
+- ðŸ“§ Email: chatchait66@nu.ac.th
+- ðŸ› Issues: https://github.com/ChatchaiTritham/SURgul/issues
+- ðŸ’¬ Discussions: https://github.com/ChatchaiTritham/SURgul/discussions
 - ðŸ“š Full README: [README.md](README.md)
 
 ---

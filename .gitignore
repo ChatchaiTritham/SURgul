@@ -69,3 +69,4 @@ Thumbs.db
 *.swp
 temp/
 tmp/
+.test-tmp/

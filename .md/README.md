@@ -116,7 +116,7 @@ Patient Data â†’ [G1: Critical Flags ] â†’
 
 ```bash
 # Clone the repository
-git clone https://github.com/YourUsername/SURgul.git
+git clone https://github.com/ChatchaiTritham/SURgul.git
 cd SURgul
 
 # Create virtual environment
@@ -396,10 +396,10 @@ If you use SURgul in your research, please cite our paper:
 ```bibtex
 @article{surgul2024,
  title={{SURgul}: Safety-first Universal Risk Governance Logic for Clinical Triage AI},
- author={[Your Name] and [Co-authors]},
+ author={Chatchai Tritham and [Co-authors]},
  journal={Under Review},
  year={2024},
- note={Code available at: https://github.com/YourUsername/SURgul}
+ note={Code available at: https://github.com/ChatchaiTritham/SURgul}
 }
 ```
 

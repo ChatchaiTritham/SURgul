@@ -33,7 +33,7 @@ For feature requests:
 
 1. **Fork the repository**
  ```bash
- git clone https://github.com/YourUsername/SRGL.git
+ git clone https://github.com/ChatchaiTritham/SRGL.git
  cd SRGL
  ```
 
@@ -233,9 +233,9 @@ All contributions go through:
 
 ## Questions?
 
-- ðŸ“§ Email: [your.email@university.edu]
-- ðŸ’¬ GitHub Discussions: https://github.com/YourUsername/SRGL/discussions
-- ðŸ› Issues: https://github.com/YourUsername/SRGL/issues
+- ðŸ“§ Email: chatchait66@nu.ac.th
+- ðŸ’¬ GitHub Discussions: https://github.com/ChatchaiTritham/SRGL/discussions
+- ðŸ› Issues: https://github.com/ChatchaiTritham/SRGL/issues
 
 ## License
 

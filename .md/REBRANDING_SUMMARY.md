@@ -104,7 +104,7 @@ docker build -t surgul:latest .
 | **Package Name** | surgul | Python: `pip install surgul` |
 | **Class Name** | SURgul | Python: `class SURgul:` |
 | **Container** | surgul | Docker: `surgul:latest` |
-| **Repository** | SURgul | GitHub: `github.com/YourUsername/SURgul` |
+| **Repository** | SURgul | GitHub: `github.com/ChatchaiTritham/SURgul` |
 
 ---
 
@@ -176,7 +176,7 @@ docker build -t surgul:latest .
 **Step 3: Update Git remote**
 ```bash
 # If repository URL changes
-git remote set-url origin https://github.com/YourUsername/SURgul.git
+git remote set-url origin https://github.com/ChatchaiTritham/SURgul.git
 ```
 
 **Step 4: Update citations**
@@ -234,9 +234,9 @@ git remote set-url origin https://github.com/YourUsername/SURgul.git
 
 ## ðŸ“ž Questions & Feedback
 
-**Rebranding Lead:** [Your Name]
-**Email:** [your.email@university.edu]
-**GitHub Issues:** https://github.com/YourUsername/SURgul/issues
+**Rebranding Lead:** Chatchai Tritham
+**Email:** chatchait66@nu.ac.th
+**GitHub Issues:** https://github.com/ChatchaiTritham/SURgul/issues
 
 For questions about:
 - **Branding/naming:** See BRANDING.md

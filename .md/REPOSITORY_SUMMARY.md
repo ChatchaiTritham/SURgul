@@ -256,7 +256,7 @@ gen.save_figure(fig, 'figure1_architecture_pro')
 ### Quick Start (20 minutes total)
 ```bash
 # 1. Setup (2 min)
-git clone https://github.com/YourUsername/SRGL.git
+git clone https://github.com/ChatchaiTritham/SRGL.git
 cd SRGL
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt && pip install -e .
@@ -365,9 +365,9 @@ docker-compose up
 
 ### Next Steps for Public Release
 1. Replace placeholder text:
- - [Your Name] â†’ Your actual name
- - [Your University] â†’ Institution name
- - [your.email@university.edu] â†’ Contact email
+ - Chatchai Tritham â†’ Your actual name
+ - Naresuan University â†’ Institution name
+ - chatchait66@nu.ac.th â†’ Contact email
  - GitHub URLs â†’ Actual repository URL
 
 2. Generate DOI:
@@ -400,10 +400,10 @@ If using this repository, cite as:
 ```bibtex
 @software{srgl2024,
  title = {{SRGL}: Screening-First Risk Governance Logic for Clinical Triage AI},
- author = {[Your Name]},
+ author = {Chatchai Tritham},
  year = {2024},
  version = {1.0.0-research},
- url = {https://github.com/YourUsername/SRGL},
+ url = {https://github.com/ChatchaiTritham/SRGL},
  doi = {10.5281/zenodo.XXXXXXX}
 }
 ```
@@ -412,13 +412,13 @@ If using this repository, cite as:
 
 ## ðŸ“ž Contact & Support
 
-**Primary Investigator:** [Your Name]
-**Institution:** [Your University]
-**Email:** [your.email@university.edu]
+**Primary Investigator:** Chatchai Tritham
+**Institution:** Naresuan University
+**Email:** chatchait66@nu.ac.th
 
-**Repository:** https://github.com/YourUsername/SRGL
-**Issues:** https://github.com/YourUsername/SRGL/issues
-**Discussions:** https://github.com/YourUsername/SRGL/discussions
+**Repository:** https://github.com/ChatchaiTritham/SRGL
+**Issues:** https://github.com/ChatchaiTritham/SRGL/issues
+**Discussions:** https://github.com/ChatchaiTritham/SRGL/discussions
 
 ---
 

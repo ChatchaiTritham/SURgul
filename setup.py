@@ -11,7 +11,7 @@ setup(
  name="surgul",
  version="1.0.0",
  author="Chatchai Tritham",
- author_email="chatchai.tritham@nu.ac.th",
+ author_email="chatchait66@nu.ac.th, chakkrits@nu.ac.th",
  description="Safety-first Universal Risk Governance Logic for Clinical Triage AI",
  long_description=long_description,
  long_description_content_type="text/markdown",
