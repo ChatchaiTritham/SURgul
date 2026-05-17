@@ -1,4 +1,4 @@
-# SURgul
+﻿# SURgul
 
 ## Overview
 
@@ -122,19 +122,6 @@ Repository artifacts currently support:
 
 Use SURgul as governance evidence for the broader TRI-X portfolio, not as an
 eighth standalone article claim.
-
-## Methodological References
-
-SURgul should be referenced as:
-
-- SRGL/governance component evidence
-- safety-first screening and conservative merge logic
-- reusable governance support for TRI-X-style clinical decision support
-
-## Citation
-
-- cite this software repository as reproducibility/component evidence while any
-  associated manuscript remains inactive or in preparation
 
 ## License
 
