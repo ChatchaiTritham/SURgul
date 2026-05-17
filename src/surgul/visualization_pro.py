@@ -1,4 +1,4 @@
-"""Publication-oriented visualization helpers for SURgul."""
+﻿"""Publication-oriented visualization helpers for SURgul."""
 
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -27,7 +27,7 @@ PUBLICATION_COLORS = {
 
 @dataclass
 class PublicationFigureConfig:
-    """Configuration for publication-ready SURgul figures."""
+    """Configuration for manuscript-preparation SURgul figures."""
 
     output_dir: Path = field(default_factory=lambda: Path("figures"))
     dpi: int = DEFAULT_DPI
@@ -180,7 +180,7 @@ class PublicationFigureGenerator:
 
 
 def generate_all_professional_figures(output_dir: str = "figures") -> Tuple[Path, ...]:
-    """Generate the core publication-ready SURgul figures with demo data."""
+    """Generate the core manuscript-preparation SURgul figures with demo data."""
 
     generator = PublicationFigureGenerator(
         PublicationFigureConfig(output_dir=Path(output_dir), raster_formats=("png",), vector_formats=("pdf",))
