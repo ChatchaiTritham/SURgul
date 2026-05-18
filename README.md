@@ -2,149 +2,97 @@
 
 ## Overview
 
-SURgul implements the safety-first Universal Risk Governance Logic used for the
-SRGL contribution in the thesis. The active importable package is `surgul`.
+Safety-first universal risk governance logic component for SRGL-style gates and conservative merging.
 
-## Installation
+This repository is part of an eight-repository clinical decision-support research portfolio. Current status: manuscript or component package in preparation. The repository role is **reproducibility/component**.
 
-```bash
+## Standard Repository Layout
+
+| Path | Purpose |
+|---|---|
+| `src/` | Package source code: `surgul` |
+| `tests/` | Unit, smoke, and behavior checks |
+| `scripts/` | Reproducibility and export scripts |
+| `examples/` | Runnable examples and demonstrations |
+| `figures/`, `visualizations/`, `outputs/`, `results/` | Generated visual and result artifacts |
+| `data/`, `models/`, `evaluation/` | Dataset, model, and evaluation assets when used by this repo |
+| `FIGURE_MANIFEST.csv` | Curated figure inventory for manuscript or component evidence |
+| `pyproject.toml`, `setup.py`, `requirements.txt`, `pytest.ini` | Python package and test configuration |
+
+## Architecture Flow
+
+```mermaid
+flowchart LR
+    A[Input data or scenario] --> B[Core package logic]
+    B --> C[Safety and quality checks]
+    C --> D[Metrics and audit outputs]
+    D --> E[Curated figures and result artifacts]
+```
+
+## Core Logic
+
+- Evaluate governance gates.
+- Apply conservative risk lattice.
+- Export reproducibility figures.
+- Validate package smoke and governance tests.
+
+## Key Formulas And Rules
+
+- Governed decision: d = merge_conservative(gates, abstention_priority=True)
+- Risk lattice: R_final = max(R_gate_1, ..., R_gate_k)
+- Invariant: unsafe_to_safe transition requires explicit constraints to pass
+
+## Data, Results, Charts, And Graphs
+
+The curated visual set is controlled by FIGURE_MANIFEST.csv and currently lists **2** figure entries. The manifest links figure IDs, roles, source scripts, source data, captions, sections, timestamps, and export DPI.
+
+| ID | Role | PNG | PDF |
+|---|---|---|---|
+| SURGUL-F1 | reproducibility | `figures\surgul_srgl_gate_architecture.png` | `figures\surgul_srgl_gate_architecture.pdf` |
+| SURGUL-F2 | reproducibility | `figures\surgul_conservative_merging_lattice.png` | `figures\surgul_conservative_merging_lattice.pdf` |
+
+## Reproduce
+
+```powershell
+cd D:\PhD-NU\Manuscript\GitHub\SURgul
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 pip install -e .
+python -m pytest -q
 ```
 
-## Quickstart
+If figure-generation scripts are present, run the matching script listed in `FIGURE_MANIFEST.csv` from the repository root.
 
-```python
-from surgul.clinical_case import ClinicalCase, TimingPattern, TriggerType, VitalSigns
-from surgul.trix_pipeline import TRIXPipeline
+## Verification Criteria
 
-case = ClinicalCase(
-    case_id="README-001",
-    age=62,
-    sex="F",
-    vitals=VitalSigns(BP_systolic=140, BP_diastolic=86, heart_rate=78),
-    timing=TimingPattern.ACUTE,
-    trigger=TriggerType.SPONTANEOUS,
-)
+- Root metadata and package files are present.
+- Source paths follow `src/<package>/...` where the package shape allows it.
+- Tests pass with `python -m pytest -q`.
+- Curated figures are listed in `FIGURE_MANIFEST.csv` rather than inferred from every raw image file.
+- Manuscript status wording stays conservative: in preparation, implementation, supplementary, or reproducibility/component evidence as appropriate.
+- No local manuscript path, external assistant wording, or software metadata block is kept in the repository text.
 
-recommendation = TRIXPipeline().process(case)
-print(recommendation.care_pathway.value)
-```
+## Portfolio Relationship
 
-## Repository Structure
-
-- `src/surgul/`: active importable package
-- `tests/`: automated tests
-- `examples/`: example usage
-- `notebooks/`: research notebooks
-
-## Tutorials And Demos
-
-- Example scripts:
-  - `examples/example_usage.py`: package-level walkthrough
-  - `examples/example_enhanced_gates.py`: enhanced gate behavior demo
-  - `examples/example_phase5_validators.py`: validator examples
-  - `examples/example_phase5_exporters.py`: exporter examples
-  - `examples/example_phase5_tutorial_walkthrough.py`: guided phase-5 workflow
-  - `scripts/generate_figures.py`: SRGL architecture and conservative-merging figure generation
-  - `scripts/generate_manuscript_manifest.py`: curated figure manifest and visual QA sheet
-- Notebooks:
-  - `notebooks/01_data_generation.ipynb`
-  - `notebooks/01_statistical_analysis.ipynb`
-  - `notebooks/02_statistical_analysis.ipynb`
-  - `notebooks/02_visualization.ipynb`
-  - `notebooks/03_visualization.ipynb`
-  - `notebooks/04_ablation_study.ipynb`
-
-## Curated Figure Status
-
-SURgul figures are currently maintained as reproducibility figures. Do not claim
-a standalone SURgul article figure set until a manuscript is actively revived,
-recompiled, and reverified.
-
-Regenerate figure exports:
-
-```bash
-python scripts/generate_figures.py
-```
-
-Regenerate the manifest and visual QA sheet:
-
-```bash
-python scripts/generate_manuscript_manifest.py
-```
-
-Outputs:
-
-- `figures/`: PDF and PNG figure exports
-- `FIGURE_MANIFEST.csv`: figure role, source script, source artifact, caption,
-  and conditional article section
-- `figures/visual_qa_contact_sheet.png`: visual QA sheet
-
-## Cross-Repository Tutorial Charts
-
-- `../tutorial_surface_comparison.png`: scripts vs examples vs notebooks across all repositories
-- `../tutorial_asset_density.png`: interactive/tutorial asset density normalized by repository size
-- `../tutorial_maturity_report.md`: combined maturity summary
-
-## Package Scope
-
-The package currently includes:
-
-- SRGL core logic in `src/surgul/srgl.py`
-- gate implementations in `src/surgul/gates.py`
-- conservative merging in `src/surgul/merging.py`
-- evaluation, exporters, validators, and visualization helpers
-
-## Source Layout
-
-This repository now uses the recommended `src/<package_name>` layout.
-Legacy flat files under `src/` are retained for compatibility work, but the
-stable package path is `src/surgul/`.
-
-## Testing
-
-```bash
-pytest tests -v
-```
-
-## Manuscript Alignment
-
-SURgul is currently a reproducibility/component repository. It supports the
-SRGL governance contribution but should not be claimed as a standalone article
-package until a manuscript is revived, recompiled, and reverified.
-
-Repository artifacts currently support:
-
-- SRGL safety-governance logic
-- six-gate screening structure
-- conservative merging behavior
-- reproducibility figures listed in `FIGURE_MANIFEST.csv`
-
-Use SURgul as governance evidence for the broader TRI-X portfolio, not as an
-eighth standalone article claim.
-
-## License
-
-- MIT; see `LICENSE`
+| Repository | Role |
+|---|---|
+| BASICS-CDSS | Beyond-accuracy evaluation methodology |
+| TRI-X | Framework-level package |
+| ORASR | Routing and safety-action component |
+| DRAS-5 | Dynamic risk-state component |
+| SAFE-Gate | Safety-gated ensemble framework |
+| SynDX | Synthetic validation and explainability evidence |
+| SURgul | SRGL/governance reproducibility component |
+| TRI-X-CDSS | Integration and implementation package |
 
 ## Contact
 
-### Contact Author
+**Chatchai Tritham**  
+Department of Computer Science and Information Technology, Faculty of Science, Naresuan University, Phitsanulok 65000, Thailand  
+Email: chatchait66@nu.ac.th  
+ORCID: 0000-0001-7899-228X
 
-**Chatchai Tritham** (Author)
-
-- Email: [chatchait66@nu.ac.th](mailto:chatchait66@nu.ac.th)
-- ORCID: [0000-0001-7899-228X](https://orcid.org/0000-0001-7899-228X)
-- Department of Computer Science and Information Technology
-- Faculty of Science, Naresuan University
-- Phitsanulok 65000, Thailand
-
-### Supervisor
-
-**Chakkrit Snae Namahoot**
-
-- E-mail: [chakkrits@nu.ac.th](mailto:chakkrits@nu.ac.th)
-- ORCID: [0000-0003-4660-4590](https://orcid.org/0000-0003-4660-4590)
-- Department of Computer Science and Information Technology
-- Faculty of Science, Naresuan University
-- Phitsanulok 65000, Thailand
+**Chakkrit Snae Namahoot**  
+Department of Computer Science and Information Technology, Faculty of Science, Naresuan University, Phitsanulok 65000, Thailand  
+Email: chakkrits@nu.ac.th  
+ORCID: 0000-0003-4660-4590
