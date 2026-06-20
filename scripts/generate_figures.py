@@ -2,72 +2,21 @@
 
 The exports visualize the package's six-gate SRGL architecture and the
 conservative merging rule implemented by `surgul.merging.ConservativeMerging`.
+
+Both figures are conceptual schematics (no measured data); they render through
+the shared pubviz style (serif fonts, palette edges, vector PDF + 300-dpi PNG).
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch
 
-# Okabe-Ito color-blind-safe palette (shared across all PhD repos)
-PALETTE = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#E69F00", "#56B4E9", "#000000"]
-
-
-def apply_pub_style():
-    """Canonical Top-Tier publication style (serif, 300 dpi, vector PDF + PNG)."""
-    mpl.rcParams.update({
-        "savefig.dpi": 300, "savefig.bbox": "tight", "savefig.pad_inches": 0.02,
-        "font.family": "serif",
-        "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
-        "mathtext.fontset": "stix",
-        "font.size": 10, "axes.titlesize": 11, "axes.labelsize": 10,
-        "axes.prop_cycle": mpl.cycler(color=PALETTE),
-    })
-
+from pubviz import apply_pub_style, save_fig, PALETTE, add_box, arrow
 
 ROOT = Path(__file__).resolve().parents[1]
 FIGURES = ROOT / "figures"
-
-
-def add_box(ax, xy, width, height, label, facecolor="#f8fafc", edgecolor="#334155", size=9):
-    patch = FancyBboxPatch(
-        xy,
-        width,
-        height,
-        boxstyle="round,pad=0.03,rounding_size=0.025",
-        linewidth=1.4,
-        edgecolor=edgecolor,
-        facecolor=facecolor,
-    )
-    ax.add_patch(patch)
-    ax.text(
-        xy[0] + width / 2,
-        xy[1] + height / 2,
-        label,
-        ha="center",
-        va="center",
-        fontsize=size,
-        wrap=True,
-    )
-
-
-def arrow(ax, start, end, color="#334155"):
-    ax.annotate(
-        "",
-        xy=end,
-        xytext=start,
-        arrowprops={"arrowstyle": "->", "lw": 1.35, "color": color},
-    )
-
-
-def save_current(name: str) -> None:
-    FIGURES.mkdir(parents=True, exist_ok=True)
-    for ext in ("png", "pdf"):
-        plt.savefig(FIGURES / f"{name}.{ext}", dpi=300, bbox_inches="tight")
-    plt.close()
 
 
 def generate_srgl_gate_architecture() -> None:
@@ -78,7 +27,7 @@ def generate_srgl_gate_architecture() -> None:
 
     ax.text(0.5, 0.95, "SURgul / SRGL Six-Gate Safety Governance", ha="center", fontsize=16, fontweight="bold")
 
-    add_box(ax, (0.04, 0.44), 0.14, 0.16, "Patient data\ncontext\nuncertainty", "#e0f2fe")
+    add_box(ax, (0.04, 0.44), 0.14, 0.16, "Patient data\ncontext\nuncertainty", facecolor="#e0f2fe")
 
     gates = [
         ("G1\nCritical flags", 0.25, 0.73, "#fee2e2"),
@@ -89,11 +38,11 @@ def generate_srgl_gate_architecture() -> None:
         ("G6\nTemporal", 0.61, 0.43, "#e0e7ff"),
     ]
     for label, x, y, color in gates:
-        add_box(ax, (x, y), 0.13, 0.13, label, color)
+        add_box(ax, (x, y), 0.13, 0.13, label, facecolor=color)
         arrow(ax, (0.18, 0.52), (x, y + 0.065))
 
-    add_box(ax, (0.80, 0.56), 0.15, 0.17, "Conservative\nmerging\nmax risk tier", "#f1f5f9")
-    add_box(ax, (0.80, 0.27), 0.15, 0.17, "Triage decision\naction\nfull audit trail", "#dcfce7")
+    add_box(ax, (0.80, 0.56), 0.15, 0.17, "Conservative\nmerging\nmax risk tier", facecolor="#f1f5f9")
+    add_box(ax, (0.80, 0.27), 0.15, 0.17, "Triage decision\naction\nfull audit trail", facecolor="#dcfce7")
 
     for _, x, y, _ in gates:
         arrow(ax, (x + 0.13, y + 0.065), (0.80, 0.64))
@@ -108,7 +57,8 @@ def generate_srgl_gate_architecture() -> None:
         color="#475569",
     )
 
-    save_current("surgul_srgl_gate_architecture")
+    save_fig(fig, "surgul_srgl_gate_architecture", FIGURES)
+    plt.close(fig)
 
 
 def generate_conservative_merging_lattice() -> None:
@@ -128,12 +78,12 @@ def generate_conservative_merging_lattice() -> None:
         ("ABSTAIN", 0.84, "#e9d5ff"),
     ]
     for name, y, color in tiers:
-        add_box(ax, (0.10, y), 0.20, 0.08, name, color, size=10)
-        add_box(ax, (0.42, y), 0.20, 0.08, f"Gate output\n{name}", color, size=9)
+        add_box(ax, (0.10, y), 0.20, 0.08, name, facecolor=color, size=10)
+        add_box(ax, (0.42, y), 0.20, 0.08, f"Gate output\n{name}", facecolor=color, size=9)
         arrow(ax, (0.30, y + 0.04), (0.42, y + 0.04))
 
-    add_box(ax, (0.72, 0.48), 0.18, 0.16, "Final tier\n=max risk\nunless abstain", "#f1f5f9", size=10)
-    add_box(ax, (0.72, 0.22), 0.18, 0.14, "Final action\n+ enforcement\n+ explanation", "#e0f2fe", size=10)
+    add_box(ax, (0.72, 0.48), 0.18, 0.16, "Final tier\n=max risk\nunless abstain", facecolor="#f1f5f9", size=10)
+    add_box(ax, (0.72, 0.22), 0.18, 0.14, "Final action\n+ enforcement\n+ explanation", facecolor="#e0f2fe", size=10)
 
     for _, y, _ in tiers:
         arrow(ax, (0.62, y + 0.04), (0.72, 0.56))
@@ -148,7 +98,8 @@ def generate_conservative_merging_lattice() -> None:
         color="#475569",
     )
 
-    save_current("surgul_conservative_merging_lattice")
+    save_fig(fig, "surgul_conservative_merging_lattice", FIGURES)
+    plt.close(fig)
 
 
 def main() -> None:
