@@ -8,8 +8,24 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
+
+# Okabe-Ito color-blind-safe palette (shared across all PhD repos)
+PALETTE = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#E69F00", "#56B4E9", "#000000"]
+
+
+def apply_pub_style():
+    """Canonical Top-Tier publication style (serif, 300 dpi, vector PDF + PNG)."""
+    mpl.rcParams.update({
+        "savefig.dpi": 300, "savefig.bbox": "tight", "savefig.pad_inches": 0.02,
+        "font.family": "serif",
+        "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
+        "mathtext.fontset": "stix",
+        "font.size": 10, "axes.titlesize": 11, "axes.labelsize": 10,
+        "axes.prop_cycle": mpl.cycler(color=PALETTE),
+    })
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -136,6 +152,7 @@ def generate_conservative_merging_lattice() -> None:
 
 
 def main() -> None:
+    apply_pub_style()
     generate_srgl_gate_architecture()
     generate_conservative_merging_lattice()
     print(f"Generated SURgul figures in {FIGURES}")
